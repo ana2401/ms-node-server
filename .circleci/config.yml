@@ -13,6 +13,16 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn install
+      # Copy .jshintrc
+      - run:
+          name: Copy .jshintrc
+          command: cp .jshintrc .
+      # Run JSHint with custom .jshintrc
+      - run:
+          name: Run JSHint
+          command: |
+            npm install -g jshint
+            jshint .
       - run:
           name: Build succeed
           command: echo "build succeed !"

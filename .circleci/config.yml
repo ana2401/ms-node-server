@@ -19,8 +19,8 @@ jobs:
           command: |
             yarn global add jshint
       - run:
-          name: Check path
-          command: echo $PATH
+          name: Check install dir
+          command: yarn global dir
       - run:
           name: Run jshint
           command: jshint .

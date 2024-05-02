@@ -4,6 +4,20 @@ version: 2.1
 orbs:
   node: circleci/node@5
 jobs:
+  build:
+    docker:
+      - image: circleci/node
+    working_directory: ~/server
+    steps:
+      - run:
+          name: Checkout code
+          command: checkout
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Build succeed
+          command: echo "build succeed !"
   test-node:
     # Install node dependencies and run tests
     executor: node/default
@@ -27,6 +41,7 @@ jobs:
 workflows:
   build-and-test:
     jobs:
+      - build
       - test-node
     # - deploy:
     #     requires:

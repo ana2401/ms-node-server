@@ -15,12 +15,15 @@ jobs:
           command: yarn install
       # Run JSHint with custom .jshintrc
       - run:
-          name: Run JSHint
+          name: Add JSHint
           command: |
             yarn global add jshint
-            which jshint
-            echo $PATH
-            jshint .
+      - run:
+          name: Check jshint
+          command: which jshint
+      - run:
+          name: Run jshint
+          command: jshint .
       - run:
           name: Build succeed
           command: echo "build succeed !"

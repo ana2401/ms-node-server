@@ -10,6 +10,9 @@ jobs:
     working_directory: ~/server
     steps:
       - run:
+          name: Check git
+          command: git --version
+      - run:
           name: Checkout code
           command: checkout
       - run:

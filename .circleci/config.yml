@@ -23,7 +23,7 @@ jobs:
           command: yarn global dir
       - run:
           name: Run jshint
-          command: jshint .
+          command: /home/circleci/.config/yarn/global/jshint .
       - run:
           name: Build succeed
           command: echo "build succeed !"

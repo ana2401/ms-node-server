@@ -9,12 +9,7 @@ jobs:
       - image: circleci/node
     working_directory: ~/server
     steps:
-      - run:
-          name: Check git
-          command: git --version
-      - run:
-          name: Checkout code
-          command: checkout
+      - checkout
       - run:
           name: Install dependencies
           command: yarn install

@@ -18,6 +18,8 @@ jobs:
           name: Run JSHint
           command: |
             yarn global add jshint
+            which jshint
+            echo $PATH
             jshint .
       - run:
           name: Build succeed
